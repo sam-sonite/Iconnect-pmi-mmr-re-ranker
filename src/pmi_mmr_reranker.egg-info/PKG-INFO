@@ -1,0 +1,54 @@
+Metadata-Version: 2.1
+Name: pmi-mmr-reranker
+Version: 0.1.0
+Summary: A lightweight PMI-MMR reranker built on NumPy and FAISS.
+Author: Indrajit Kar
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+
+# PMI-MMR Reranker
+
+Install:
+
+```bash
+pip install .
+```
+
+Basic usage:
+
+```python
+from collections import Counter
+import numpy as np
+from pmi_mmr_reranker import retrieve_with_pmi_mmr
+
+documents = [
+    "AI creates new professions",
+    "Jobs in artificial intelligence",
+    "Career opportunities in AI industry",
+]
+
+embeddings = np.random.rand(len(documents), 128).astype("float32")
+query_embedding = np.random.rand(128).astype("float32")
+corpus_counts = Counter({
+    ("ai", "jobs"): 10,
+    "ai": 50,
+    "jobs": 40,
+})
+
+results = retrieve_with_pmi_mmr(
+    query="profession creation",
+    query_embedding=query_embedding,
+    documents=documents,
+    embeddings=embeddings,
+    corpus_counts=corpus_counts,
+    total_tokens=1000,
+)
+```
+
+Exports:
+
+- `compute_pmi`
+- `cosine_sim`
+- `pmi_mmr_rerank`
+- `faiss_retrieve`
+- `retrieve_with_pmi_mmr`
