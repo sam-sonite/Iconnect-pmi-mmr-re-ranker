@@ -1,5 +1,12 @@
 # PMI MMR Reranker
 
+![License](https://img.shields.io/badge/License-MIT-blue.svg)
+![Version](https://img.shields.io/badge/Version-1.0.0-informational)
+![Status](https://img.shields.io/badge/Status-Experimental-yellow)
+![Python](https://img.shields.io/badge/Python-3.8%2B-blue)
+![NumPy](https://img.shields.io/badge/Dependency-NumPy-lightgrey)
+
+
 A lightweight Python library for document retrieval using **PMI (Pointwise Mutual Information)** and **MMR (Maximal Marginal Relevance)** reranking.
 
 ---
